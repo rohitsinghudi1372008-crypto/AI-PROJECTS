@@ -15,6 +15,9 @@ os.environ["LANGCHAIN_TRACING_V2"] = "false"
 def build_ai_engine():
     print("1. Creating the AI Brain and Embedding Models...")
     
+    # Fix for Streamlit Cloud: manually create the cache folder so the model can download
+    os.makedirs(os.path.expanduser("~/.cache/gpt4all"), exist_ok=True)
+    
     # SECRET HACK: Using stable OpenAI software to talk to Google's free servers!
     llm = ChatOpenAI(
         api_key=os.environ.get("GROQ_API_KEY"),
