@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from langchain_community.document_loaders import TextLoader
+from langchain_community.document_loaders import PyPDFLoader
 from langchain_community.embeddings import GPT4AllEmbeddings
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
@@ -28,8 +28,8 @@ def build_ai_engine():
     # Using local computer for Embeddings
     embeddings = GPT4AllEmbeddings() 
 
-    print("2. Loading the Syllabus...")
-    loader = TextLoader("syllabus.txt")
+    print("2. Loading the World Data PDF...")
+    loader = PyPDFLoader("world_data.pdf")
     docs = loader.load()
     
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
@@ -41,7 +41,7 @@ def build_ai_engine():
 
     print("4. Gluing everything together into a Chain...")
     prompt = ChatPromptTemplate.from_messages([
-        ("system", "You are a helpful college teaching assistant. Use the provided context to answer the student's question. Context: {context}"),
+        ("system", "You are a helpful global geography and culture assistant. Use the provided context to answer the student's question. Context: {context}"),
         ("human", "{input}"),
     ])
 
@@ -60,7 +60,7 @@ def build_ai_engine():
 if __name__ == "__main__":
     chain = build_ai_engine()
     print("\n✅ RAG Engine is Ready!")
-    question = "When is the midterm exam?"
+    question = "What is the currency of Japan?"
     print(f"User: {question}")
     response = chain.invoke(question)
     print(f"AI: {response}")
