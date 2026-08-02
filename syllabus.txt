@@ -1,0 +1,23 @@
+CS101: Introduction to Artificial Intelligence
+Fall 2026 Syllabus
+
+Instructor: Dr. Alan Turing
+Office Hours: Tuesdays and Thursdays, 2:00 PM - 4:00 PM
+Email: alan.turing@university.edu
+
+Course Description:
+This course provides a comprehensive introduction to Artificial Intelligence. We will cover the history of AI, basic search algorithms, machine learning concepts, and an introduction to modern Generative AI, including Large Language Models (LLMs) and Vector Databases.
+
+Grading Policy:
+- Homework Assignments: 30%
+- Midterm Exam: 30%
+- Final Capstone Project: 40%
+
+Important Dates:
+- September 15: Homework 1 due
+- October 20: Midterm Exam
+- November 10: Capstone Project Proposals Due
+- December 15: Final Capstone Presentations
+
+Academic Integrity:
+Students are expected to produce original work. Plagiarism or the unauthorized use of AI-generated content for homework assignments will result in a failing grade for the course.
